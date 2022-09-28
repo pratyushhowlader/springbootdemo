@@ -18,7 +18,7 @@ private  StudentRepo studentRepo;
     @Test
     public void testStudent(){
         assert (true);
-        Student studentSave = studentRepo.save(new Student(1,"prasun"));
+        Student studentSave = studentRepo.save(Student.builder().id(1).name("prasun").build());
         Student student = studentRepo.getStudentByName("prasun");
         then(student.getId()).isNotNull();
         then(student.getName()).isEqualTo(studentSave.getName());
